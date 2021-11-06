@@ -12,6 +12,7 @@ struct CreateToDo: View {
     @State var toDoTitle = ""
     @State var important = false
     @State var reminder = false
+    @State private var date = Date()
     @Environment(\.presentationMode) var presentationMode
     @EnvironmentObject var toDoStorage: ToDoStorage
     
@@ -28,9 +29,13 @@ struct CreateToDo: View {
             }
             Section {
                 // Reminders based on time user selects
-                Toggle(isOn:$reminder) {
-                    Text("Remind Me")
-                }
+                
+                DatePicker(
+                        "Reminder Date",
+                        selection: $date,
+                        displayedComponents: [.date]
+                )
+
             }
             Section {
                 HStack {

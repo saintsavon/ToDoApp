@@ -13,6 +13,8 @@
 		02FC17A82734FAAA0053E929 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 02FC17A72734FAAA0053E929 /* Preview Assets.xcassets */; };
 		02FC17B0273500730053E929 /* ToDoItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02FC17AF273500730053E929 /* ToDoItem.swift */; };
 		02FC17B2273507FF0053E929 /* CreateToDo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02FC17B1273507FF0053E929 /* CreateToDo.swift */; };
+		02FC17B4273648590053E929 /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02FC17B3273648590053E929 /* NotificationManager.swift */; };
+		02FC17B6273648780053E929 /* NotificationHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02FC17B5273648780053E929 /* NotificationHelper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		02FC17A92734FAAA0053E929 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		02FC17AF273500730053E929 /* ToDoItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoItem.swift; sourceTree = "<group>"; };
 		02FC17B1273507FF0053E929 /* CreateToDo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateToDo.swift; sourceTree = "<group>"; };
+		02FC17B3273648590053E929 /* NotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
+		02FC17B5273648780053E929 /* NotificationHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationHelper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +61,8 @@
 			isa = PBXGroup;
 			children = (
 				02FC17A02734FAA90053E929 /* ToDoApp.swift */,
+				02FC17B3273648590053E929 /* NotificationManager.swift */,
+				02FC17B5273648780053E929 /* NotificationHelper.swift */,
 				02FC17A22734FAA90053E929 /* ToDoList.swift */,
 				02FC17B1273507FF0053E929 /* CreateToDo.swift */,
 				02FC17AF273500730053E929 /* ToDoItem.swift */,
@@ -144,8 +150,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				02FC17B6273648780053E929 /* NotificationHelper.swift in Sources */,
 				02FC17A32734FAA90053E929 /* ToDoList.swift in Sources */,
 				02FC17B2273507FF0053E929 /* CreateToDo.swift in Sources */,
+				02FC17B4273648590053E929 /* NotificationManager.swift in Sources */,
 				02FC17A12734FAA90053E929 /* ToDoApp.swift in Sources */,
 				02FC17B0273500730053E929 /* ToDoItem.swift in Sources */,
 			);
