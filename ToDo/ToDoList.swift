@@ -9,7 +9,13 @@ import SwiftUI
 
 struct ToDoList: View {
     
+    @State var isChecked:Bool = false
     @EnvironmentObject var toDoStorage: ToDoStorage
+    
+    // This has to be indented or it won't work, no single line func
+    func checked(){
+        isChecked = !isChecked
+    }
     
     var body: some View {
         
@@ -25,7 +31,13 @@ struct ToDoList: View {
                             .cornerRadius(5)
                         
                     } else {
-                        Text(todo.title)
+                        Button(action: checked) {
+                            HStack {
+                                Image(systemName: isChecked ? "checkmark.square": "square")
+                                Text(todo.title)
+                            }
+                        }
+                        
                         
                     }
                     
