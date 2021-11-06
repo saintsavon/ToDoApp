@@ -11,6 +11,7 @@ struct CreateToDo: View {
     
     @State var toDoTitle = ""
     @State var important = false
+    @State var reminder = false
     @Environment(\.presentationMode) var presentationMode
     @EnvironmentObject var toDoStorage: ToDoStorage
     
@@ -26,11 +27,17 @@ struct CreateToDo: View {
                 }
             }
             Section {
+                // Reminders based on time user selects
+                Toggle(isOn:$reminder) {
+                    Text("Remind Me")
+                }
+            }
+            Section {
                 HStack {
                     Spacer()
                     Button("Save") {
                         // Pulls ToDo item into stored list
-                        self.toDoStorage.toDos.append(ToDoItem(title: self.toDoTitle, important: self.important))
+                        self.toDoStorage.toDos.append(ToDoItem(title: self.toDoTitle, important: self.important, reminder: self.reminder))
                         
                         // This moves the user back to the previous view
                         self.presentationMode.wrappedValue.dismiss()

@@ -12,10 +12,12 @@ struct ToDoItem: Identifiable, Codable {
     var id = UUID()
     var title: String
     var important: Bool
+    var reminder: Bool
     
-    init(title: String, important: Bool) {
+    init(title: String, important: Bool, reminder: Bool) {
         self.title = title
         self.important = important
+        self.reminder = reminder
     }
     
 }
