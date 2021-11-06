@@ -39,7 +39,6 @@ struct ToDoList: View {
                             }
                         }
                         
-                        
                     }
                     
                 }
