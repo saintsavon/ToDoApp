@@ -29,7 +29,6 @@ struct CreateToDo: View {
             }
             Section {
                 // Reminders based on time user selects
-                
                 DatePicker(
                         "Reminder Date",
                         selection: $date,
