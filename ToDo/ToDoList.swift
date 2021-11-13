@@ -25,10 +25,14 @@ struct ToDoList: View {
                     todo in
                     
                     if todo.important {
-                        Text(todo.title).bold().foregroundColor(.white)
-                            .padding(4)
-                            .background(Rectangle().foregroundColor(.red))
-                            .cornerRadius(5)
+                        Button(action: checked) {
+                            HStack {
+                                Image(systemName: isChecked ? "checkmark.square": "square")
+                                Text(todo.title)
+                                Spacer()
+                                Image(systemName: "exclamationmark").padding(.trailing, 5)
+                            }
+                        }
                         
                     } else {
                         Button(action: checked) {
@@ -51,7 +55,8 @@ struct ToDoList: View {
             }.navigationBarTitle("To Do List")
             .navigationBarItems(trailing: NavigationLink(
                 destination: CreateToDo()) {
-                Text("Add")
+                Image(systemName: "plus").resizable()
+                    .aspectRatio(1, contentMode: .fill)
             })
         }
         
