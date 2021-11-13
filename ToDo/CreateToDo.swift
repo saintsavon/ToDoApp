@@ -12,8 +12,8 @@ struct CreateToDo: View {
     @State var toDoTitle = ""
     @State var important = false
     @State var reminder = false
-    @State private var date = Date()
-    @State private var loi = LOI.low         //This will be used for LOI picker
+    @State private var date = Date()    // Sets date
+    @State private var loi = LOI.low    // Sets level of importance
     @Environment(\.presentationMode) var presentationMode
     @EnvironmentObject var toDoStorage: ToDoStorage
     
@@ -38,21 +38,23 @@ struct CreateToDo: View {
                     Text("Important")
                 }
                 
-                // Picker for level of importance
-                Picker("Importance Level", selection: $date) {
-                    Text("Low").tag(LOI.low)
-                    Text("Moderate").tag(LOI.moderate)
-                    Text("High").tag(LOI.high)
+                if important == true {
+                    // Picker for level of importance
+                    Picker("Importance Level", selection: $loi) {
+                        Text("low").tag(LOI.low)
+                        Text("moderate").tag(LOI.moderate)
+                        Text("high").tag(LOI.high)
+                    }
                 }
             }
             Section {
                 // Reminders based on time user selects
                 DatePicker(
-                        "Reminder Date",
-                        selection: $date,
-                        displayedComponents: [.date]
+                    "Reminder Date",
+                    selection: $date,
+                    displayedComponents: [.date]
                 )
-
+                
             }
             Section {
                 HStack {
@@ -68,8 +70,14 @@ struct CreateToDo: View {
                 }
             }
         }.listStyle(GroupedListStyle()) // This sets general styling of the list
+        
     }
+    
 }
+
+//struct Picker<Label, SelectionValue, Content> where Label : View, SelectionValue : Hashable, Content : View {
+// Not really sure what or if this goes here
+//}
 
 struct CreateToDo_Previews: PreviewProvider {
     static var previews: some View {
