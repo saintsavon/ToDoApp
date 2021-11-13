@@ -17,11 +17,12 @@ struct ToDoApp: App {
         setupNotifications()
     }
     
-    @StateObject var toDoStorage = ToDoStorage()
+    @StateObject private var toDoStorage = ToDoStorage()
 
     var body: some Scene {
         WindowGroup {
             ToDoList().environmentObject(toDoStorage)
+
         }
     }
     

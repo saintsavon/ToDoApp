@@ -13,7 +13,6 @@ struct ToDoList: View {
     @State var isChecked:Bool = false
     @EnvironmentObject var toDoStorage: ToDoStorage
     
-    // This has to be indented or it won't work, no single line func
     func checked(){
         isChecked = !isChecked
     }
