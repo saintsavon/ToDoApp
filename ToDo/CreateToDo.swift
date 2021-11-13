@@ -13,8 +13,19 @@ struct CreateToDo: View {
     @State var important = false
     @State var reminder = false
     @State private var date = Date()
+    @State private var loi = LOI.low         //This will be used for LOI picker
     @Environment(\.presentationMode) var presentationMode
     @EnvironmentObject var toDoStorage: ToDoStorage
+    
+    // Not sure if this should stay here
+    enum LOI: String, CaseIterable, Identifiable {
+        case low
+        case moderate
+        case high
+        
+        var id: String { self.rawValue }
+    }
+    
     
     var body: some View {
         List {
@@ -25,6 +36,13 @@ struct CreateToDo: View {
                 // Toggle for important Bool
                 Toggle(isOn:$important) {
                     Text("Important")
+                }
+                
+                // Picker for level of importance
+                Picker("Importance Level", selection: $date) {
+                    Text("Low").tag(LOI.low)
+                    Text("Moderate").tag(LOI.moderate)
+                    Text("High").tag(LOI.high)
                 }
             }
             Section {
